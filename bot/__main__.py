@@ -157,7 +157,7 @@ def stats(update, context):
                      f'<b>├ 💣 Total Tasks: </b>{total_task}\n'\
                      f'<b>╰ 🔫 User Tasks: </b>{user_task}\n\n'
         else:
-            stats += f'<b>╭─《 ⚠️ BOT LIMITS ⚠️ 》</b>\n'\
+            stats += f'<b>╭─《 BOT LIMITS 🚧 》</b>\n'\
                      f'<b>├  Torrent/Direct: </b>{torrent_direct}\n'\
                      f'<b>├  Zip/Unzip: </b>{zip_unzip}\n'\
                      f'<b>├  Leech: </b>{leech_limit}\n'\
@@ -181,7 +181,7 @@ def start(update, context):
         buttons.buildbutton(f"{config_dict['START_BTN2_NAME']}", f"{config_dict['START_BTN2_URL']}")
     reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
-        start_string = f'''This bot can mirror all your links to Google Drive!
+        start_string = f'''This bot can leech all your links to Telegram 📥
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         if config_dict['PICS']:
@@ -197,7 +197,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 
 
 def restart(update, context):
-    restart_message = sendMessage("Restarting...", context.bot, update.message)
+    restart_message = sendMessage("Restarting...♻️", context.bot, update.message)
     if Interval:
         Interval[0].cancel()
         Interval.clear()
