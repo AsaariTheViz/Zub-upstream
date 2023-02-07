@@ -215,7 +215,7 @@ def ping(update, context):
         start_time = int(round(time() * 1000))
         reply = sendMessage("Starting Ping ⚡ ", context.bot, update.message)
         end_time = int(round(time() * 1000))
-        editMessage(f'Ping = {end_time - start_time} ms 💦', reply)
+        editMessage(f'Ping={end_time - start_time} ms💦\n <b> Bot Uptime:</b> {get_readable_time(time() - botStartTime)}', reply)
 
 def log(update, context):
     sendLogFile(context.bot, update.message)
@@ -443,11 +443,11 @@ def main():
                         chat_id, msg_id = map(int, f)
                     msg = f" Restarted Successfully ✅\n"
                 else:
-                    msg = f" Bot Restarted ✔️\n"
-                msg += f" DATE: {date}\n"
-                msg += f" TIME: {time}\n"
-                msg += f" TIMEZONE: {timez}\n"
-                msg += f" VERSION: {version}"
+                    msg = f"Bot Restarted ✔️\n"
+                msg += f"DATE: {date}\n"
+                msg += f"TIME: {time}\n"
+                msg += f"TIMEZONE: {timez}\n"
+                msg += f"VERSION: {version}"
 
                 for tag, links in data.items():
                     msg += f"\n{tag}: "
@@ -482,11 +482,11 @@ def main():
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
         try:
-            msg = f" Restarted Successfully ✅\n"
-            msg += f" DATE: {date}\n"
-            msg += f" TIME: {time}\n"
-            msg += f" TIMEZONE: {timez}\n"
-            msg += f" VERSION: {version}"
+            msg = f"Restarted Successfully ✅\n"
+            msg += f"DATE: {date}\n"
+            msg += f"TIME: {time}\n"
+            msg += f"TIMEZONE: {timez}\n"
+            msg += f"VERSION: {version}"
             bot.edit_message_text(msg, chat_id, msg_id)
         except Exception as e:
             LOGGER.info(e)
