@@ -214,7 +214,7 @@ def ping(update, context):
         start_time = int(round(time() * 1000))
         reply = sendMessage("Starting Ping ⚡ ", context.bot, update.message)
         end_time = int(round(time() * 1000))
-        editMessage(f'<b>Ping-:</b>{end_time - start_time}ms 💦\n <b>Bot Uptime:</b> {get_readable_time(time() - botStartTime)}', reply)
+        editMessage(f'<b>Ping: </b>{end_time - start_time}ms 💦\n<b>Bot Uptime:</b> {get_readable_time(time() - botStartTime)}', reply)
 
 def log(update, context):
     sendLogFile(context.bot, update.message)
