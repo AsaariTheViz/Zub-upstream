@@ -112,6 +112,7 @@ def stats(update, context):
 <b> Download:</b> {get_readable_file_size(net_io_counters().bytes_recv)}\n
 <b> Total Disk Space:</b> {get_readable_file_size(disk_usage("/")[0])}
 <b>Used:</b> {get_readable_file_size(disk_usage("/")[1])} | <b>Free:</b> {get_readable_file_size(disk_usage("/")[2])}\n
+<b>SWAP:</b> {get_readable_file_size(swap_memory().total)} | <b>SWAP:</b> {get_readable_file_size(swap_memory().used)}
 <b> Memory Total:</b> {get_readable_file_size(virtual_memory().total)}
 <b>Used:</b> {get_readable_file_size(virtual_memory().used)} | <b>Free:</b> {get_readable_file_size(virtual_memory().available)}\n
 <b> CPU:</b> {progress_bar(cpu_percent(interval=1))} {cpu_percent(interval=1)}%
