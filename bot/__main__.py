@@ -80,11 +80,11 @@ def stats(update, context):
     mem_u = get_readable_file_size(memory.used)
     if config_dict['EMOJI_THEME']:
             stats = f'''
-<b>BOT STATISTICS 📊</b>
+<u><b>BOT STATISTICS 📊</b></u>
 <b>┌ Commit Date:</b> {last_commit}
 <b>├ Bot Uptime:</b> {get_readable_time(time() - botStartTime)}
 <b>└ OS Uptime:</b> {get_readable_time(time() - boot_time())}\n
-<b>SYSTEM STATS 🧮 </b>
+<u><b>SYSTEM STATS 🧮</b></u>
 <b>├ Total Cores:</b> {cpu_count(logical=True)}
 <b>├ Physical Cores:</b> {cpu_count(logical=False)}\n
 <b>├ Upload:</b> {get_readable_file_size(net_io_counters().bytes_sent)}
