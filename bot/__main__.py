@@ -117,7 +117,6 @@ def stats(update, context):
 <b> CPU:</b> {progress_bar(cpu_percent(interval=1))} {cpu_percent(interval=1)}%
 <b> RAM:</b> {progress_bar(virtual_memory().percent)} {virtual_memory().percent}%
 <b> DISK:</b> {progress_bar(disk_usage("/")[3])} {disk_usage("/")[3]}%\n
-<b> 🧩 OS:</b> {system()}, {architecture()[0]}, {release()}\n
 '''
 
 
