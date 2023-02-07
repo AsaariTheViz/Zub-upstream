@@ -102,9 +102,9 @@ def stats(update, context):
     else:
             stats = f'''
 <b>BOT STATISTICS 📊</b>
-<b> Commit Date:</b> {last_commit}
-<b> Bot Uptime:</b> {get_readable_time(time() - botStartTime)}
-<b> OS Uptime:</b> {get_readable_time(time() - boot_time())}\n
+<b>┌ Commit Date:</b> {last_commit}
+<b>├ Bot Uptime:</b> {get_readable_time(time() - botStartTime)}
+<b>└ OS Uptime:</b> {get_readable_time(time() - boot_time())}\n
 <b>SYSTEM STATS 🧮 </b>
 <b> Total Cores:</b> {cpu_count(logical=True)}
 <b> Physical Cores:</b> {cpu_count(logical=False)}\n
@@ -214,7 +214,7 @@ def ping(update, context):
         start_time = int(round(time() * 1000))
         reply = sendMessage("Starting Ping ⚡ ", context.bot, update.message)
         end_time = int(round(time() * 1000))
-        editMessage(f'Ping={end_time - start_time} ms💦\n <b> Bot Uptime:</b> {get_readable_time(time() - botStartTime)}', reply)
+        editMessage(f'<b>Ping-:</b>{end_time - start_time}ms 💦\n <b>Bot Uptime:</b> {get_readable_time(time() - botStartTime)}', reply)
 
 def log(update, context):
     sendLogFile(context.bot, update.message)
@@ -443,10 +443,10 @@ def main():
                     msg = f" Restarted Successfully ✅\n"
                 else:
                     msg = f"Bot Restarted ✔️\n"
-                msg += f"DATE: {date}\n"
-                msg += f"TIME: {time}\n"
-                msg += f"TIMEZONE: {timez}\n"
-                msg += f"VERSION: {version}"
+                msg += f" DATE: {date}\n"
+                msg += f" TIME: {time}\n"
+                msg += f" TIMEZONE: {timez}\n"
+                msg += f" VERSION: {version}"
 
                 for tag, links in data.items():
                     msg += f"\n{tag}: "
@@ -481,11 +481,11 @@ def main():
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
         try:
-            msg = f"Restarted Successfully ✅\n"
-            msg += f"DATE: {date}\n"
-            msg += f"TIME: {time}\n"
-            msg += f"TIMEZONE: {timez}\n"
-            msg += f"VERSION: {version}"
+            msg = f"<b>Restarted Successfully ✅</b>\n"
+            msg += f" DATE: {date}\n"
+            msg += f" TIME: {time}\n"
+            msg += f" TIMEZONE: {timez}\n"
+            msg += f" VERSION: {version}"
             bot.edit_message_text(msg, chat_id, msg_id)
         except Exception as e:
             LOGGER.info(e)
